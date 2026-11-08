@@ -7,9 +7,10 @@ Try the deployed app here:
 
 [Academic Success Predictor](https://academic-success-prediction-bqmjpprbcberr9wsoaaeg5.streamlit.app/)
 
+
 ## 📸 App Preview
 
-![Academic Success Predictor App](screenshots/app-preview.png)
+![Academic Success Predictor App](screenshots/preview.png)
 
 ## Project Overview
 
