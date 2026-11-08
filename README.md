@@ -1,6 +1,12 @@
 
 # Academic Success Prediction
 
+## 🚀 Live Demo
+
+Try the deployed app here:
+
+[Academic Success Predictor](https://academic-success-prediction-bqmjpprbcberr9wsoaaeg5.streamlit.app/)
+
 ## Project Overview
 
 This project uses machine learning to predict students' academic outcomes based on demographic, socioeconomic, and academic information.
