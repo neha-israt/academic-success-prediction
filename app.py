@@ -18,11 +18,275 @@ BASE_DIR = Path(__file__).resolve().parent
 
 
 # --------------------------------------------------
+# CATEGORY LABELS
+# These change only what users see.
+# Original values are passed to the model.
+# --------------------------------------------------
+
+CATEGORY_LABELS = {
+
+    "Marital status": {
+        1: "Single",
+        2: "Married",
+        3: "Widower",
+        4: "Divorced",
+        5: "Facto union",
+        6: "Legally separated"
+    },
+
+    "Application mode": {
+        1: "1st phase - General contingent",
+        2: "Ordinance No. 612/93",
+        5: "1st phase - Special contingent (Azores)",
+        7: "Holders of other higher courses",
+        10: "Ordinance No. 854-B/99",
+        15: "International student (Bachelor)",
+        16: "1st phase - Special contingent (Madeira)",
+        17: "2nd phase - General contingent",
+        18: "3rd phase - General contingent",
+        26: "Ordinance No. 533-A/99 (Different Plan)",
+        27: "Ordinance No. 533-A/99 (Other Institution)",
+        39: "Over 23 years old",
+        42: "Transfer",
+        43: "Change of course",
+        44: "Technological specialization diploma holders",
+        51: "Change of institution/course",
+        53: "Short cycle diploma holders",
+        57: "Change of institution/course (International)"
+    },
+
+    "Course": {
+        33: "Biofuel Production Technologies",
+        171: "Animation and Multimedia Design",
+        8014: "Social Service (Evening)",
+        9003: "Agronomy",
+        9070: "Communication Design",
+        9085: "Veterinary Nursing",
+        9119: "Informatics Engineering",
+        9130: "Equinculture",
+        9147: "Management",
+        9238: "Social Service",
+        9254: "Tourism",
+        9500: "Nursing",
+        9556: "Oral Hygiene",
+        9670: "Advertising and Marketing Management",
+        9773: "Journalism and Communication",
+        9853: "Basic Education",
+        9991: "Management (Evening)"
+    },
+
+    "Daytime/evening attendance": {
+        0: "Evening",
+        1: "Daytime"
+    },
+
+    "Previous qualification": {
+        1: "Secondary education",
+        2: "Higher education - Bachelor's degree",
+        3: "Higher education - Degree",
+        4: "Higher education - Master's",
+        5: "Higher education - Doctorate",
+        6: "Frequency of higher education",
+        9: "12th year of schooling - Not completed",
+        10: "11th year of schooling - Not completed",
+        12: "Other - 11th year of schooling",
+        14: "10th year of schooling",
+        15: "10th year of schooling - Not completed",
+        19: "Basic education 3rd cycle",
+        38: "Basic education 2nd cycle",
+        39: "Technological specialization course",
+        40: "Higher education - Degree (1st cycle)",
+        42: "Professional higher technical course",
+        43: "Higher education - Master's (2nd cycle)"
+    },
+
+    "Mother's qualification": {
+        1: "Secondary education - 12th year",
+        2: "Higher education - Bachelor's degree",
+        3: "Higher education - Degree",
+        4: "Higher education - Master's",
+        5: "Higher education - Doctorate",
+        6: "Frequency of higher education",
+        9: "12th year - Not completed",
+        10: "11th year - Not completed",
+        11: "7th year (Old)",
+        12: "Other - 11th year",
+        14: "10th year",
+        18: "General commerce course",
+        19: "Basic education 3rd cycle",
+        22: "Technical-professional course",
+        26: "7th year of schooling",
+        27: "2nd cycle of general high school",
+        29: "9th year - Not completed",
+        30: "8th year of schooling",
+        34: "Unknown",
+        35: "Cannot read or write",
+        36: "Can read without 4th year",
+        37: "Basic education 1st cycle",
+        38: "Basic education 2nd cycle",
+        39: "Technological specialization course",
+        40: "Higher education - Degree",
+        41: "Specialized higher studies course",
+        42: "Professional higher technical course",
+        43: "Higher education - Master's",
+        44: "Higher education - Doctorate"
+    },
+
+    "Father's qualification": {
+        1: "Secondary education - 12th year",
+        2: "Higher education - Bachelor's degree",
+        3: "Higher education - Degree",
+        4: "Higher education - Master's",
+        5: "Higher education - Doctorate",
+        6: "Frequency of higher education",
+        9: "12th year - Not completed",
+        10: "11th year - Not completed",
+        11: "7th year (Old)",
+        12: "Other - 11th year",
+        13: "2nd year complementary high school",
+        14: "10th year",
+        18: "General commerce course",
+        19: "Basic education 3rd cycle",
+        20: "Complementary high school course",
+        22: "Technical-professional course",
+        25: "Complementary high school - Not completed",
+        26: "7th year of schooling",
+        27: "2nd cycle of general high school",
+        29: "9th year - Not completed",
+        30: "8th year of schooling",
+        31: "General administration and commerce",
+        33: "Supplementary accounting and administration",
+        34: "Unknown",
+        35: "Cannot read or write",
+        36: "Can read without 4th year",
+        37: "Basic education 1st cycle",
+        38: "Basic education 2nd cycle",
+        39: "Technological specialization course",
+        40: "Higher education - Degree",
+        41: "Specialized higher studies course",
+        42: "Professional higher technical course",
+        43: "Higher education - Master's",
+        44: "Higher education - Doctorate"
+    }
+}
+
+
+# --------------------------------------------------
+# OCCUPATION LABELS
+# --------------------------------------------------
+
+GENERAL_OCCUPATIONS = {
+    0: "Student",
+    1: "Legislative and executive directors",
+    2: "Intellectual and scientific professionals",
+    3: "Intermediate-level technicians",
+    4: "Administrative staff",
+    5: "Personal services and sales workers",
+    6: "Farmers and skilled agricultural workers",
+    7: "Industry and construction workers",
+    8: "Machine operators and assemblers",
+    9: "Unskilled workers",
+    10: "Armed forces professions",
+    90: "Other situation",
+    99: "Not specified"
+}
+
+MOTHER_OCCUPATIONS = {
+    **GENERAL_OCCUPATIONS,
+    122: "Health professionals",
+    123: "Teachers",
+    125: "ICT specialists",
+    131: "Science and engineering technicians",
+    132: "Health associate professionals",
+    134: "Legal, social and cultural technicians",
+    141: "Office workers and secretaries",
+    143: "Accounting and financial clerks",
+    144: "Administrative support staff",
+    151: "Personal service workers",
+    152: "Sellers",
+    153: "Personal care workers",
+    171: "Skilled construction workers",
+    173: "Printing and precision instrument workers",
+    175: "Food processing and craft workers",
+    191: "Cleaning workers",
+    192: "Unskilled agricultural workers",
+    193: "Unskilled industrial and construction workers",
+    194: "Meal preparation assistants"
+}
+
+FATHER_OCCUPATIONS = {
+    **GENERAL_OCCUPATIONS,
+    101: "Armed forces officers",
+    102: "Armed forces sergeants",
+    103: "Other armed forces personnel",
+    112: "Administrative and commercial directors",
+    114: "Hotel and catering directors",
+    121: "Physical science and engineering specialists",
+    122: "Health professionals",
+    123: "Teachers",
+    124: "Finance and administration specialists",
+    131: "Science and engineering technicians",
+    132: "Health associate professionals",
+    134: "Legal, social and cultural technicians",
+    135: "ICT technicians",
+    141: "Office workers and secretaries",
+    143: "Accounting and financial clerks",
+    144: "Administrative support staff",
+    151: "Personal service workers",
+    152: "Sellers",
+    153: "Personal care workers",
+    154: "Security service personnel",
+    161: "Market-oriented farmers",
+    163: "Subsistence farmers and fishermen",
+    171: "Skilled construction workers",
+    172: "Metal workers",
+    174: "Electrical and electronics workers",
+    175: "Food processing and craft workers",
+    181: "Fixed plant and machine operators",
+    182: "Assembly workers",
+    183: "Vehicle drivers",
+    192: "Unskilled agricultural workers",
+    193: "Unskilled industrial and construction workers",
+    194: "Meal preparation assistants",
+    195: "Street vendors and service providers"
+}
+
+CATEGORY_LABELS["Mother's occupation"] = MOTHER_OCCUPATIONS
+CATEGORY_LABELS["Father's occupation"] = FATHER_OCCUPATIONS
+
+
+# --------------------------------------------------
+# YES / NO AND OTHER BINARY LABELS
+# --------------------------------------------------
+
+YES_NO_COLUMNS = [
+    "Displaced",
+    "Educational special needs",
+    "Debtor",
+    "Tuition fees up to date",
+    "Scholarship holder",
+    "International"
+]
+
+for column in YES_NO_COLUMNS:
+    CATEGORY_LABELS[column] = {
+        0: "No",
+        1: "Yes"
+    }
+
+CATEGORY_LABELS["Gender"] = {
+    0: "Female",
+    1: "Male"
+}
+
+
+# --------------------------------------------------
 # LOAD DATA AND MODELS
 # --------------------------------------------------
 
 @st.cache_data
 def load_data():
+
     data = pd.read_csv(
         BASE_DIR / "data.csv",
         sep=";"
@@ -35,6 +299,7 @@ def load_data():
 
 @st.cache_resource
 def load_models():
+
     preprocessor = joblib.load(
         BASE_DIR / "preprocessor.pkl"
     )
@@ -70,13 +335,33 @@ def get_column_options(column_name):
     )
 
 
+def format_category(value, mapping):
+
+    try:
+        numeric_value = int(value)
+
+        if numeric_value in mapping:
+            return mapping[numeric_value]
+
+    except (ValueError, TypeError):
+        pass
+
+    return f"Other category (code: {value})"
+
+
 def categorical_input(label, column_name):
 
     options = get_column_options(column_name)
 
+    mapping = CATEGORY_LABELS.get(column_name, {})
+
     return st.selectbox(
         label,
         options,
+        format_func=lambda value: format_category(
+            value,
+            mapping
+        ),
         key=f"input_{column_name}"
     )
 
@@ -448,7 +733,6 @@ selected_model = st.selectbox(
 
 if selected_model == "Logistic Regression":
     model = logistic_model
-
 else:
     model = balanced_model
 
@@ -470,7 +754,7 @@ if st.button(
         # Create DataFrame from user input
         input_df = pd.DataFrame([input_data])
 
-        # Remove accidental whitespace from input names
+        # Clean input column names
         input_df.columns = input_df.columns.str.strip()
 
         # Get original feature names from saved preprocessor
@@ -556,22 +840,13 @@ if st.button(
         )
 
         if predicted_probability >= 85:
-
-            st.success(
-                "The model strongly favors this outcome."
-            )
+            st.success("The model strongly favors this outcome.")
 
         elif predicted_probability >= 60:
-
-            st.info(
-                "The model moderately favors this outcome."
-            )
+            st.info("The model moderately favors this outcome.")
 
         else:
-
-            st.warning(
-                "The model is less certain about this outcome."
-            )
+            st.warning("The model is less certain about this outcome.")
 
         st.caption(
             """
